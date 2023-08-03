@@ -1,21 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
     int count =5;
     int num,answer;
-    printf("¼ýÀÚ: ");
-    scanf("%d",&answer);
+    srand(time(NULL));
+    answer = rand()%100+1;
     while(count>0)
     {
-        printf("³²Àº ±âÈ¸ %d¹ø\n",count);
-        printf("¼ýÀÚ¸¦ ¸ÂÇôº¸¼¼¿ä.(1~100)");
+        printf("ë‚¨ì€ ê¸°íšŒ %dë²ˆ\n",count);
+        printf("ìˆ«ìžë¥¼ ë§ží˜€ë³´ì„¸ìš”.(1~100)");
         scanf("%d",&num);
-        if(num==answer) printf("Á¤´äÀÔ´Ï´Ù!\n");
-        else if(num>answer) printf("DOWN ¡é\n");
-        else printf("UP ¡è\n");
-
+        if(num==answer)
+        {
+            printf("ì •ë‹µìž…ë‹ˆë‹¤!\n");
+            break;
+        }
+        else if(num>answer) printf("DOWN â†“\n");
+        else printf("UP â†‘\n");
         count--;
     }
+    if(count ==0) printf("ì‹¤íŒ¨ìž…ë‹ˆë‹¤.\n");
     return 0;
 }
