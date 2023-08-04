@@ -4,33 +4,32 @@
 
 int main()
 {
-    int rand1,rand2,x=10,y=0;
+    int rand1,rand2,y=0;
     int count =0,idx=0;
     int password=1,num;
     srand(time(NULL));
     while(1)
     {
         
-        rand1 = rand()%x+y;
-        rand2 = rand()%x+y;
+        rand1 = rand()%10+y;
+        rand2 = rand()%10+y;
         num = rand1* rand2;
-        printf("########### %d¹øÂ° ºñ¹Ð¹øÈ£##########\n",idx);
+        printf("########### %dë²ˆì§¸ ë¹„ë°€ë²ˆí˜¸##########\n",idx);
         printf("%d x %d?\n",rand1,rand2);
         printf("#############################################\n");
-        printf("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.(Á¾·á¸¦ ¿øÇÏ¸é -1 ÀÔ·Â)>>");
+        printf("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.(ì¢…ë£Œë¥¼ ì›í•˜ë©´ -1 ìž…ë ¥)>>");
         scanf("%d",&password);
 
         if(password == num) 
         {   
-            printf(">>Good! Á¤´äÀÔ´Ï´Ù.\n");
+            printf(">>Good! ì •ë‹µìž…ë‹ˆë‹¤.\n");
             count++;
-            x+=10;
             y+=10;
         }
         else if(password == -1) break;
-        else printf(">> ¶¯! Æ²·È½À´Ï´Ù.\n");
+        else printf(">> ë•¡! í‹€ë ¸ìŠµë‹ˆë‹¤.\n");
         idx++;
     }
-    printf("ºñ¹Ð¹øÈ£ %d°³¸¦ ¸ÂÇû½À´Ï´Ù.\n",count);
+    printf("ë¹„ë°€ë²ˆí˜¸ %dê°œë¥¼ ë§ží˜”ìŠµë‹ˆë‹¤.\n",count);
     return 0;
 }
