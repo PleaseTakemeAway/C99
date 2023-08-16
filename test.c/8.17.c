@@ -24,5 +24,6 @@ int main()
         if(strcmp(english,answer)==0) printf("%s,정답입니다.\n",answer);
         else printf("틀렸습니다. 정답은 %s입니다.\n",english);
     }
+    fclose(fp);
     return 0;
 }
